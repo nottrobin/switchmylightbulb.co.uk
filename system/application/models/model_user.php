@@ -133,7 +133,6 @@ class Model_user extends DataMapper {
     
     function login_now() {
         $ci =& get_instance();
-        
         if($this->exists()) {
             // Check account isn't disabled
             if($this->disabled) {
@@ -143,7 +142,7 @@ class Model_user extends DataMapper {
             
             $ci->session->set_userdata('current_user_id',$this->id);
             $ci->current_user = $this;
-            
+
             if(check_logged_in()) {
                 $ci->session->set_flashdata('notification','Logged in as <strong>'.$this->email_address.'</strong>.');
                 return true;
@@ -209,12 +208,8 @@ class Model_user extends DataMapper {
     
     function admin_of_supplier($options = array()) {
         if(!$this->exists()) {return false;}
-        if(array_key_exists('supplier_id',$options) && $options['supplier_id'] == $this->admin_of_supplier_id) {
-            return true;
-        }
-        if(!array_key_exists('supplier_id',$options) && $this->admin_of_supplier_id) {
-            return $this->admin_of_supplier_id;
-        }
+        if($options['supplier_id'] && $options['supplier_id'] == $this->admin_of_supplier_id) {return true;}
+        if(!$options['supplier_id'] && $this->admin_of_supplier_id) {return $this->admin_of_supplier_id;}
         
         return false;
     }

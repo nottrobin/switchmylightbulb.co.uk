@@ -18,10 +18,7 @@
     
     <div id="container">
       <header id="main">
-        <img class="logo" src="/images/logos/carbon-small.jpg" />
-        <h1>
-          <?=$this->config->item('site_name')?>
-        </h1>
+        <h1>Light bulb finder</h1>
       </header>
       
 <?php include('includes/main_navigation.php') ?>
@@ -50,7 +47,6 @@
       </section>
     
       <footer>
-        <img class="logo" src="/images/logos/gogreen-small.jpg" />
         <nav>
           <h2>Westminster council</h2>
           <ul>

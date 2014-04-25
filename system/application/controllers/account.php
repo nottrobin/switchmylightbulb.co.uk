@@ -24,16 +24,15 @@ class Account extends Controller {
         $user = new Model_user();
         $user->email_address = $this->input->post('email_address');
         $user->password_hash = $this->input->post('password');
-        
         // Try logging in
         if(!empty($_POST) && $user->login()) {
             // Registered and logged in
             // Load cart
             $user->load_cart();
             // Redirect the user back to their original page
-            //~ $previous_page = $this->history->pop();
-            //~ if(!$previous_page || $previous_page == ){$previous_page = '/';}
-            redirect('/');
+            $previous_page = $this->history->pop();
+            if(!$previous_page){$previous_page = '/';}
+            redirect($previous_page);
         } else {
             // Not logged in - display the login form
             $this->data['record'] = $user;
@@ -144,7 +143,7 @@ class Account extends Controller {
         $login_keys = new Model_login_key();
         
         // If we have a unique key, try to log in
-        if(!empty($unique_key)) {
+        if(isset($unique_key)) {
             if(!$login_keys->login_with_key($unique_key)) {
                 $this->data['title'] = 'Change password - invalid key';
                 $this->data['content_template'] = 'account_change_password_missing_key.php';
@@ -152,7 +151,6 @@ class Account extends Controller {
                 return false;
             }
         }
-        
         // Check we're logged in
         if(!check_logged_in()) {redirect('/account/login');}
         

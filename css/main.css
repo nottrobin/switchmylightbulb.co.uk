@@ -54,7 +54,7 @@ input, select, button {
     font-size: 0.8em;
 }
 input {width: 15em;}
-input[type=number] {width: 4em;}
+input[type=number] {width: 2em;}
 input[type=checkbox] {width: auto;}
 input:focus {background-color: #efd;}
 form {padding-bottom: 1em;}
@@ -103,11 +103,6 @@ header#main h1 {
     margin: 0;
     padding: 1.5em 1em 1em 1em;
     font-size: 2.5em;
-}
-header#main img.logo {
-    float: right;
-    margin-top: 2em;
-    margin-right: 2em;
 }
 nav#main {
     float: left;
@@ -275,22 +270,17 @@ footer nav {
     width: 20em;
     padding: 1em;
 }
-footer img.logo {
-    float: right;
-    margin-top: 1em;
-    margin-right: 4em;
-}
 
 div#errors {color: red;}
 
 div.bracket {float: left}
 
 table#bulbs_list {width: 100%;}
-table#bulbs_list td.col_name {width: 35%}
+table#bulbs_list td.col_name {width: 40%}
 table#bulbs_list td.col_wattage {width: 15%}
 table#bulbs_list td.col_voltage {width: 15%}
 table#bulbs_list td.col_view {width: 10%}
-table#bulbs_list td.col_add_to_basket {width: 25%}
+table#bulbs_list td.col_add_to_basket {width: 20%}
 
 table.cart_items tr .qty {width: 8em;}
 table.cart_items tr .price {width: 8em;}

@@ -11,9 +11,9 @@
 |	http://example.com/
 |
 */
-$config['base_url']     = "http://switchmylightbulb.co.uk/";
-$config['site_domain']  = "switchmylightbulb.co.uk";
-$config['site_name']    = "Switch my light bulb";
+$config['base_url']     = "http://cibulbcart.robinwinslow.co.uk/";
+$config['site_domain']     = "cibulbcart.robinwinslow.co.uk";
+$config['site_name']    = "Light Bulb Finder";
 
 /*
 |--------------------------------------------------------------------------
@@ -254,7 +254,7 @@ $config['sess_persistant_cookie']   = FALSE;
 |
 */
 $config['cookie_prefix']	= "";
-$config['cookie_domain']	= ".switchmylightbulb.co.uk";
+$config['cookie_domain']	= ".cibulbcart.robinwinslow.co.uk";
 $config['cookie_path']		= "/";
 
 /*

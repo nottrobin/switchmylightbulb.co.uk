@@ -8,8 +8,5 @@
           <!--<li <?if(check_uri('supplier/apply')):?>class="active"<?endif?>><a href="/supplier/apply">Become a supplier</a></li>-->
           <li <?if(check_uri('page/controls')):?>class="active"<?endif?>><a href="/page/controls">Controls</a></li>
           <li <?if(check_uri('page/developments')):?>class="active"<?endif?>><a href="/page/developments">Developments</a></li>
-          <?if(check_logged_in(array('is_admin' => true))):?>
-          <li <?if(check_uri('admin')):?>class="active"<?endif?>><a href="/admin">Admin</a></li>
-          <?endif?>
         </ul>
       </nav>

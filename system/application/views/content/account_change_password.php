@@ -14,7 +14,7 @@
       <input type="password" id="field_password" name="password" /><br/>
       <label for="field_confirm_password">Confirm new password:</label><br/>
       <input type="password" id="field_confirm_password" name="confirm_password" /><br/>
-      <button type="submit">Change password</button>
+      <button type="submit">Create password</button>
     </form>
     
     <p>Back to <a href="/account/summary">account summary</a>.</p>
