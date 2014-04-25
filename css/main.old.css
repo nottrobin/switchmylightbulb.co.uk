@@ -1,0 +1,270 @@
+/* Reset *
+ *-------*/
+ 
+*, a:hover, a:visited, a:active {padding: 0; border: 0px solid transparent; margin: 0; font-size: 1em; font-weight: normal; text-decoration: none}
+ul, li, ol {list-style-type: none;}
+header, footer, section, aside, nav, hgroup {
+    display: block;
+    overflow: auto;
+}
+
+/* Layout *
+ *--------*/
+
+body {
+    text-align: center;
+    line-height: 1.5em;
+    background-color: #ddd;
+    font-family: calibri;
+}
+body * {text-align: left;}
+
+div#top {
+    background-color: black;
+    height: 6.8em;
+    margin-bottom: -6.8em;
+}
+div#container {display: inline-block;}
+
+header {
+    background-color: black;
+    margin-bottom: 1em;
+    max-width: 66em;
+    min-height: 6.8em;
+    color: white;
+}
+header h1 {
+    margin: 0;
+    padding: 1em;
+    font-size: 2.5em;
+}
+
+nav {
+    margin: 0 0.5em 0.5em 0.5em;
+}
+nav li {
+    display: inline-block;
+    background-color: #666;
+    color: white;
+    padding: 0.5em 1em;
+    margin: 0 0.5em 0.5em 0.5em;
+}
+nav li.active, nav li:hover {
+    background-color: #fff;
+    color: inherit;
+    cursor: pointer;
+}
+
+section#content {
+    padding: 0 0.5em;
+    display: inline-block;
+    clear: both;
+}
+
+section#search {
+    margin: 0 1em 1em 1em;
+}
+section#search form {
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+section#search input {
+    display: inline-block;
+    width: 65%;
+    padding: 10px;
+    margin: 0 2% 0 0;
+    color: #666;
+    border: 2px solid #666;
+}
+section#search select {
+    display: inline-block;
+    width: 20%;
+    padding: 5px;
+    margin: 0 2% 0 0;
+    color: #666;
+    border: 2px solid #999;
+}
+section#search button {
+    display: inline-block;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    margin: 5px 0 10px 0;
+    padding: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+}
+section#search button img {
+    width: 30px;
+    height: 30px;
+}
+
+aside#postblock {
+    float: left;
+    min-width: 12em;
+    max-width: 16em;
+}
+aside#postblock section {
+    background-color: #333;
+    color: white;
+    padding: 1em 1em 0.1px 1em;
+    margin: 0 0.5em 1em 0.5em;
+}
+aside#postblock section#basket table th {
+    background-color: #666;
+    vertical-align: top;
+    padding: 0 5px;
+    margin: 0;
+}
+aside#postblock section#basket table th.qty {width: 1.5em;}
+aside#postblock section#basket table th.price {width: 4em;}
+aside#postblock section#basket table td {
+    background-color: #444;
+    vertical-align: top;
+    padding: 0 5px;
+    margin: 0;
+}
+
+aside#postblock section input {width: 9em;}
+
+section#notifications {
+    background-color: transparent;
+    padding: 0;
+}
+section#notifications ul li {
+    margin: 0 0 0.5em 0;
+    padding: 0.2em 1em;
+    background-color: darkorange;
+}
+aside#postblock section#login input {
+    width: 94%;
+    font-size: 0.8em;
+    padding: 2px 2%;
+}
+
+section#central {
+    max-width: 44em;
+    float: left;
+    padding: 0 0.5em 1em 0.5em;
+}
+section#main {
+    padding: 1.5em 1.5em 0 1.5em;
+    background-color: #fff;
+}
+
+footer {
+    padding: 1em;
+    background-color: grey;
+    color: white;
+}
+
+div#bottom {
+    height: 3.5em;
+    margin-top: -3.5em;
+    background-color: grey;
+}
+
+div#errors {color: red;}
+
+div.bracket {float: left;}
+
+@media all and (max-width: 52em) {
+    section#main {float: none;}
+    aside#postblock {
+        float: none;
+        width: auto;
+    }
+    aside#postblock section#account h1 {
+        display: inline-block;
+        border-right: 1px solid white;
+        margin: 0 20px 0 0;
+        padding-right: 20px;
+    }
+    aside#postblock section#account p, aside#postblock section#related li {
+        display: inline-block;
+        margin: 0 15px 0 0;
+    }
+}
+
+table#bulbs_list {width: 100%;}
+table#bulbs_list td.col_name {width: 40%}
+table#bulbs_list td.col_wattage {width: 15%}
+table#bulbs_list td.col_voltage {width: 15%}
+table#bulbs_list td.col_view {width: 10%}
+table#bulbs_list td.col_add_to_basket {width: 20%}
+
+table#shopping_cart tr .qty {width: 8em;}
+table#shopping_cart tr .price {width: 8em;}
+table#shopping_cart tr .remove {width: 4em;}
+
+table {
+    font-size: 0.8em;
+    margin-bottom: 1.25em;
+    width: 100%;
+}
+table td, table th {padding: 5px 10px;}
+table td {background-color: #ddd;}
+table th {
+    background-color: #bbb;
+    font-weight: bold;
+}
+
+table form {padding:0;}
+
+nav#page_controls {
+    background-color: #ddd;
+    float: left;
+    clear: both;
+    width: 100%;
+    margin: 0 0 1em 0;
+    padding-left: 0;
+}
+nav#page_controls ul {background-color: transparent;}
+nav#page_controls ul li {
+    padding: 5px 10px;
+    margin: 0;
+    background-color: transparent;}
+nav#page_controls ul#previous_pages {float: left;}
+nav#page_controls ul#next_pages {float: right;}
+
+
+/* Content styling *
+ *-----------------*/
+p, h1, h2 {padding-bottom: 1em;}
+h1 {font-size: 2em;}
+h2, aside h1 {font-size: 1.3em;}
+h1, h2, h3, h4 {font-family: cambria;}
+li {margin-bottom: 0.5em;}
+a, a:visited, a:active {
+    cursor: pointer;
+    color: #999;
+    border-bottom: 1px dotted transparent;
+}
+small {font-size: 0.8em;}
+strong {font-weight: bold;}
+a:hover {
+    border-color: black;
+    color: black;
+}
+aside#postblock a:hover, aside#preblock a:hover {
+    color: #fff;
+    border-color: white;
+}
+button {margin: 1em 0;}
+input, select, button {
+    padding: 2px;
+    margin: 5px 0;
+    border: 2px solid #666;
+    font-size: 0.8em;
+}
+input:focus {
+    background-color: #efd;
+}
+form {padding-bottom: 1em;}
+form section.column {
+    width: 18em;
+    float: left;
+}

@@ -1,0 +1,13 @@
+Dear <?=$ci->current_user->forename?>, welcome to Light bulb finder.
+
+Here is your account information:
+
+Forename: <?=$ci->current_user->forename?>
+Surname: <?=$ci->current_user->surname?>
+Email address: <?=$ci->current_user->email_address?>
+
+You can login to the site at any time:
+<?=$ci->config->site_url()?>account/login
+
+Kind regards,
+The light bulb finder team.

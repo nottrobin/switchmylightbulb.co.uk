@@ -1,0 +1,71 @@
+<html>
+  <body>
+    <div id="cibulb_email">
+      <p>Dear <?=$ci->data['supplier']->company_name?>.</p>
+
+      <p>A customer has chosen to send you their shopping cart information from <a href="<?=$ci->config->site_url()?>">Light bulb finder</a></p>
+      
+      <h2>Customer information</h2>
+      <ul>
+        <li><strong>Forename</strong>: <?=$ci->current_user->forename?></li>
+        <li><strong>Surname</strong>: <?=$ci->current_user->surname?></li>
+        <li><strong>Email address</strong>: <?=$ci->current_user->email_address?></li>
+      </ul>
+      <p>If any information about the customer is missing or incorrect, please contact the customer and ask them to update their information.</p>
+      
+      <h2>Shopping cart</h2>
+      
+      <p><strong>Order number:</strong> <?=$ci->data['order']->id?></p>
+      
+      <table id="shopping_cart" style="text-align: left">
+        <tr>
+          <th class="name" style="padding: 5px 10px;border: 2px solid #999;border-spacing: 5px;">Name</th>
+          <th class="qty" style="width: 7em; padding: 5px 10px;border: 2px solid #999;border-spacing: 5px;">Quantity</th>
+          <th class="price" style="width: 7em; padding: 5px 10px;border: 2px solid #999;border-spacing: 5px;">Est. price</th>
+        </tr>
+        
+        <?
+          $bulb = new Model_energy_saving_bulb();
+          foreach($ci->cart->contents() as $item):
+        ?>
+        <tr>
+          <td class="name" style="padding: 5px 10px;border: 2px solid #999;border-spacing: 5px;">
+            <a href="<?=$ci->config->site_url()?>bulbs/information/energy_saving/<?=$item['id']?>"><?=$item['name']?></a>
+            <?if($bulb->get_by_id($item['id'])->requires_adapter):?>
+            <br/><small>Please also include a fitting adapter for this bulb to replace the bulb: "<?=$bulb->non_energy_saving_bulb->get()->name?>"</small>
+            <?endif?>
+          </td>
+          <td class="qty" style="padding: 5px 10px;border: 2px solid #999;border-spacing: 5px;"><?=$item['qty']?></td>
+          <td class="price" style="padding: 5px 10px;border: 2px solid #999;border-spacing: 5px;">
+            &pound;<?=number_format($item['subtotal'],2)?>
+            <?if(isset($item['upper_price']) && $item['upper_price'] > 0):?>
+              - &pound;<?=number_format($ci->cart->upper_price_subtotal($item),2)?>
+            <?endif?>
+          </td>
+        </tr>
+        <?php endforeach ?>
+        <tr>
+          <td class="name" style="padding: 5px 10px;border: 2px solid #999;border-spacing: 5px;"><strong>Totals:</strong></td>
+          <td class="qty" style="padding: 5px 10px;border: 2px solid #999;border-spacing: 5px;"><?=$ci->cart->total_discrete_items()?></td>
+          <td class="price" style="padding: 5px 10px;border: 2px solid #999;border-spacing: 5px;">
+            &pound;<?=number_format($ci->cart->total(),2)?>
+            <?if(intval($ci->cart->upper_total()) > intval($ci->cart->total())):?>
+              - &pound;<?=number_format($ci->cart->upper_total(),2)?>
+            <?endif?>
+          </td>
+        </tr>
+        
+      </table>
+      
+      <p>
+      In your communication with the customer, please ask them to rate your level of service by sending them the following link:<br/> 
+<?=$ci->config->site_url()?>account/rate_suppliers
+      </p>
+      
+      <p>
+        Kind regards,<br/>
+        The light bulb finder team.
+      </p>
+    </div>
+  </body>
+</html>

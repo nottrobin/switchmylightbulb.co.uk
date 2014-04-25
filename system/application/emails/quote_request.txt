@@ -1,0 +1,50 @@
+Dear <?=$ci->data['supplier']->company_name?>. 
+ 
+A customer has chosen to send you their shopping cart information through Light bulb finder [<?=$ci->config->site_url()?>]. 
+ 
+Please provide the customer with a quote for their order at your earliest convenience. 
+ 
+Customer information 
+=== 
+ 
+Forename: <?=$ci->current_user->forename?> 
+Surname: <?=$ci->current_user->surname?> 
+Email address: <?=$ci->current_user->email_address?> 
+ 
+--- 
+If any information about the customer is missing or incorrect, please contact the customer and ask them to update their information. 
+--- 
+
+=== 
+ 
+Shopping cart 
+=== 
+ 
+Order number: <?=$ci->data['order']->id?> 
+ 
+<?php 
+  $bulb = new Model_energy_saving_bulb();
+  foreach($ci->cart->contents() as $item):
+?> 
+--- 
+Name: <?=$item['name']?>  
+Quantity: <?=$item['qty']?> 
+Subtotal: £;<?=number_format($item['subtotal'],2)?><?if(isset($item['upper_price']) && $item['upper_price'] > 0):?> - £<?=number_format($ci->cart->upper_price_subtotal($item),2)?><?endif?> 
+Link: <?=$ci->config->site_url()?>bulbs/information/energy_saving/<?=$item['id']?> 
+<?if($bulb->get_by_id($item['id'])->requires_adapter):?>
+Please also include a fitting adapter for this bulb to replace the bulb: 
+<?=$bulb->non_energy_saving_bulb->get()->name?> 
+<?endif?>
+--- 
+<?php endforeach ?> 
+ 
+Total items: <?=$ci->cart->total_discrete_items()?> 
+Estimated total price: £<?=number_format($ci->cart->total(),2)?><?if(intval($ci->cart->upper_total()) > intval($ci->cart->total())):?> - £<?=number_format($ci->cart->upper_total(),2)?><?endif?> 
+ 
+=== 
+ 
+In your communication with the customer, please ask them to rate your level of service by sending them the following link: 
+<?=$ci->config->site_url()?>account/rate_suppliers 
+ 
+Kind regards, 
+The light bulb finder team. 

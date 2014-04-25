@@ -1,0 +1,44 @@
+Dear <?=$ci->current_user->forename?>. 
+ 
+Your shopping cart was sent to the suppliers as you requested. 
+    
+Suppliers 
+=== 
+ 
+<?foreach($ci->data['records'] as $supplier):?> 
+---
+Name: <?=$supplier->company_name?> 
+Email: <?=$supplier->business_email?> 
+Link: <?=$ci->config->site_url()?>supplier/information/<?=$supplier->id?> 
+---
+<?endforeach?> 
+ 
+Shopping cart 
+=== 
+ 
+Order number: <?=$ci->data['order']->id?> 
+ 
+<?
+$bulb = new Model_energy_saving_bulb();
+foreach($ci->cart->contents() as $item):
+?> 
+--- 
+Name: <?=$item['name']?> 
+Quantity: <?=$item['qty']?> 
+Subtotal: &pound;<?=number_format($item['subtotal'],2)?><?if(isset($item['upper_price']) && $item['upper_price'] > 0):?> - &pound;<?=number_format($ci->cart->upper_price_subtotal($item),2)?><?endif?> 
+Link: <?=$ci->config->site_url()?>bulbs/information/energy_saving/<?=$item['id']?> 
+<?if($bulb->get_by_id($item['id'])->requires_adapter):?>
+A fitting adapter for this bulb to replace the bulb "<?=$bulb->non_energy_saving_bulb->get()->name?>" will also be included.
+<?=$bulb->non_energy_saving_bulb->get()->name?> 
+<?endif?>
+--- 
+<?php endforeach ?> 
+ 
+
+Total items: <?=$ci->cart->total_discrete_items()?>  
+Estimated total price: £<?=number_format($ci->cart->total(),2)?><?if(intval($ci->cart->upper_total()) > intval($ci->cart->total())):?> - £<?=number_format($ci->cart->upper_total(),2)?><?endif?> 
+ 
+=== 
+
+Kind regards, 
+The light bulb finder team. 

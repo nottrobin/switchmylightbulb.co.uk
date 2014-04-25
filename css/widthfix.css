@@ -1,0 +1,27 @@
+@media all and (max-width: 60em) {
+    section#main {
+        float: none;
+    }
+    aside#postblock {
+        float: none;
+        width: 100%;
+        margin: 0;
+        clear: both;
+    }
+}
+
+@media all and (max-width:30em) {
+    nav#main ul {
+        float: none;
+    }
+    nav#main li {
+        display: list-item;
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #C9CACB;
+    }
+    nav#main li a {
+        font-size: 1em;
+        padding: 0.2em 0.5em;
+    }
+}

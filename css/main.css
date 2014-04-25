@@ -1,0 +1,327 @@
+/* Reset *
+ *-------*/
+*, a:hover, a:visited, a:active {padding: 0; border: 0px solid transparent; margin: 0; font-size: 1em; font-weight: inherit; text-decoration: none}
+ul, li, ol {list-style-type: none;}
+header, footer, section, aside, nav, hgroup, article, figure, legend {display: block;}
+
+/* Content styling *
+ *-----------------*/
+html {font-size: 100%;}
+body {
+    font-size: 1em;
+    line-height: 1.5em;
+    font-family: calibri;
+}
+p, h1, h2, h3, table {
+    padding-bottom: 1em;
+    line-height: 1.2em;
+}
+p {line-height: 1.5em;}
+h1 {font-size: 2em;}
+h2, aside h1 {font-size: 1.3em;}
+h3 {font-size: 1.1em;}
+h1, h2, h3, h4 {font-family: cambria;}
+li {margin-bottom: 0.5em;}
+table {
+    font-size: 0.8em;
+    width: 100%;
+}
+table td, table th {padding: 5px 10px;}
+table td {background-color: #DDDFEA;}
+table th {
+    background-color: #C9CACB;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0B1867;
+}
+table form {padding:0;}
+a, a:visited, a:active {
+    font-weight: 550;
+    cursor: pointer;
+    color: #4B558F;
+}
+small {
+    font-size: 0.8em;
+    line-height: 0.6em;
+}
+strong {font-weight: bold;}
+a:hover {color: #999;}
+button {margin: 1em 0;}
+input, select, button {
+    padding: 2px;
+    margin: 5px 0;
+    border: 2px solid #666;
+    font-size: 0.8em;
+}
+input {width: 15em;}
+input[type=number] {width: 4em;}
+input[type=checkbox] {width: auto;}
+input:focus {background-color: #efd;}
+form {padding-bottom: 1em;}
+form section.column {
+    width: 18em;
+    float: left;
+}
+.hidden {display: none;}
+ol li {
+    margin-left: 20px;
+    list-style: decimal outside none;
+}
+ul li {
+    margin-left: 20px;
+    list-style: disc outside none;
+}
+label {font-weight: inherit;}
+hr {
+    height: 2px;
+    background-color: #999;
+    margin: 1em 0;
+}
+figure {padding: 1em 10%;}
+figure legend {font-size: 0.8em;}
+
+/* Layout *
+ *--------*/
+body {
+    text-align: center;
+    background-color: #C9CACB;
+}
+body * {
+    text-align: left;
+}
+div#container {
+    display: inline-block;
+    padding: 0 0.5em;
+}
+header#main {
+    background: #0C1968 url('/images/purple.gif') repeat-x top left;
+    border-bottom: 5px solid #F5D130;
+    width: 100%;
+    color: white;
+}
+header#main h1 {
+    margin: 0;
+    padding: 1.5em 1em 1em 1em;
+    font-size: 2.5em;
+}
+header#main img.logo {
+    float: right;
+    margin-top: 2em;
+    margin-right: 2em;
+}
+nav#main {
+    float: left;
+    clear: both;
+    margin: 0 0 1.5em 0;
+    width: 100%;
+    background: white url('/images/nav-grey.gif') repeat-x bottom left;
+}
+nav#main ul {
+    float: left;
+    clear: both;
+}
+nav#main li {
+    float: left;
+    margin: 0;
+    border-right: 2px solid #C9CACB;
+    list-style-type: none;
+}
+nav#main li a {
+    display: block;
+    color: black;
+    font-size: 1.2em;
+    padding: 0.3em 0.6em;
+}
+nav#main li.active a, nav#main li a:hover {
+    background-color: #F5D130;
+    color: inherit;
+    border-color: transparent;
+}
+nav#page_controls li {display: inline-block;}
+section#content {
+    clear: both;
+}
+section#content hgroup {
+    border-bottom: 2px solid black;
+    margin-bottom: 1em;
+}
+
+section#search {
+    margin: 0 1em 1em 1em;
+    clear: both;
+}
+section#search form {
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+section#search input {
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+    margin: 0 2% 0 0;
+    color: #666;
+    border: 2px solid #666;
+}
+section#search select {
+    display: inline-block;
+    width: 20%;
+    padding: 5px;
+    margin: 0 2% 0 0;
+    color: #666;
+    border: 2px solid #999;
+}
+section#search button {
+    display: inline-block;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    margin: 5px 0 10px 0;
+    padding: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+}
+section#search button img {
+    width: 30px;
+    height: 30px;
+}
+
+aside#postblock {
+    float: left;
+    width: 14em;
+    margin-left: 1em;
+}
+aside#postblock article {
+    color: white;
+    padding: 0;
+    margin: 0 0 1em 0;
+    overflow: auto;
+}
+aside#postblock article header {
+    margin: 0;
+    padding: 1em 1em 0 1em;
+    background-color: #0B1867;
+}
+aside#postblock article section.content {
+    background-color: white;
+    padding: 1em 1em 0.1px 1em;
+    color: black;
+}
+aside#postblock article#basket table th {
+    vertical-align: top;
+    padding: 3px 5px;
+    margin: 0;
+}
+aside#postblock article#basket table th.qty {width: 1.5em;}
+aside#postblock article#basket table th.price {width: 4em;}
+aside#postblock article#basket table td {
+    vertical-align: top;
+    padding: 3px 5px;
+    margin: 0;
+}
+
+aside#postblock article input {width: 9em;}
+
+section#notifications {
+    background-color: transparent;
+    padding: 0;
+}
+section#notifications ul li {
+    margin: 0 0 0.5em 0;
+    padding: 0.2em 1em;
+    background-color: darkorange;
+    list-style-type: none;
+}
+aside#postblock section#login input {
+    width: 94%;
+    font-size: 0.8em;
+    padding: 2px 2%;
+}
+
+section#central {
+    font-size: 1em;
+    max-width: 44em;
+    float: left;
+    padding: 0 0 1em 0;
+}
+section#main {
+    padding: 1.5em 1.5em 0.5em 1.5em;
+    background-color: #fff;
+}
+section#copy {
+    padding: 0.5em 0;
+}
+
+div.filler {
+    visibility: hidden;
+    overflow: hidden;
+    height: 0px;
+}
+
+footer {
+    width: 100%;
+    background: #4D5790 url('/images/footer-nav.gif') no-repeat bottom right;
+    float: left;
+    clear: both;
+    color: white;
+    padding-bottom: 2em;
+}
+footer a {color: white !important;}
+footer a:hover {color: #f5d130 !important;}
+footer nav {
+    float: left;
+    width: 20em;
+    padding: 1em;
+}
+footer img.logo {
+    float: right;
+    margin-top: 1em;
+    margin-right: 4em;
+}
+
+div#errors {color: red;}
+
+div.bracket {float: left}
+
+table#bulbs_list {width: 100%;}
+table#bulbs_list td.col_name {width: 35%}
+table#bulbs_list td.col_wattage {width: 15%}
+table#bulbs_list td.col_voltage {width: 15%}
+table#bulbs_list td.col_view {width: 10%}
+table#bulbs_list td.col_add_to_basket {width: 25%}
+
+table.cart_items tr .qty {width: 8em;}
+table.cart_items tr .price {width: 8em;}
+table.cart_items tr .remove {width: 4em;}
+
+nav#page_controls {
+    background-color: white;
+    float: left;
+    clear: both;
+    width: 100%;
+    margin: 1em 0 0 0;
+    padding-left: 0;
+}
+nav#page_controls ul {background-color: transparent;}
+nav#page_controls ul li {
+    padding: 5px 10px;
+    margin: 0;
+    background-color: transparent;}
+nav#page_controls ul#previous_pages {float: left;}
+nav#page_controls ul#next_pages {float: right;}
+
+section#copy {clear: both;}
+
+div.field_wrapper {
+    padding: 0.5em;
+    border: 2px solid grey;
+}
+textarea#field_content {
+    display: block;
+    border: 0px none transparent;
+    padding: 0;
+    width: 100%;
+    height: 25em;
+}

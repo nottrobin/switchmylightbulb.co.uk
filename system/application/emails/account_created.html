@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <p>Dear <?=$ci->current_user->forename?>, welcome to Light bulb finder.</p>
+
+    <p>
+      Here is your account information:
+      <ul>
+        <li><strong>Forename:</strong> <?=$ci->current_user->forename?></li>
+        <li><strong>Surname:</strong> <?=$ci->current_user->surname?></li>
+        <li><strong>Email address:</strong> <?=$ci->current_user->email_address?></li>
+      </ul>
+    </p>
+    
+    <p>
+      You can <a href="<?=$ci->config->site_url()?>account/login">login to the site</a> at any time.
+    </p>
+    
+    <p>
+      Kind regards,<br/>
+      The light bulb finder team.
+    </p>
+  </body>
+</html>
